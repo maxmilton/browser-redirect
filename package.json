@@ -1,0 +1,47 @@
+{
+  "name": "browser-redirect",
+  "version": "1.0.0",
+  "description": "A dead simple browser redirector.",
+  "repository": "maxmilton/browser-redirect",
+  "homepage": "https://github.com/maxmilton/browser-redirect",
+  "author": "Max Milton <max@happyhackers.xyz>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production bun build.ts",
+    "dev": "NODE_ENV=development bun build.ts",
+    "lint": "bun run lint:js && bun run lint:ts",
+    "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.mjs,.ts .",
+    "lint:ts": "tsc --project ./tsconfig.lint.json",
+    "prebuild": "rm -rf dist; cp -r static dist",
+    "update": "bun x taze --interactive -r"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chrome": "0.0.233",
+    "@typescript-eslint/eslint-plugin": "5.59.1",
+    "@typescript-eslint/parser": "5.59.1",
+    "bun-types": "0.5.8",
+    "eslint": "8.39.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-security": "1.7.1",
+    "eslint-plugin-unicorn": "46.0.0",
+    "git-ref": "0.3.1",
+    "prettier": "2.8.8",
+    "prettier-plugin-pkg": "0.17.1",
+    "typescript": "5.0.4"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "pluginSearchDirs": [
+      "."
+    ]
+  }
+}
