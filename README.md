@@ -1,5 +1,4 @@
 [![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/browser-redirect/ci.yml?branch=master)](https://github.com/maxmilton/browser-redirect/actions)
-[![Coverage status](https://img.shields.io/codeclimate/coverage/maxmilton/browser-redirect)](https://codeclimate.com/github/maxmilton/browser-redirect)
 [![Licence](https://img.shields.io/github/license/maxmilton/browser-redirect.svg)](https://github.com/maxmilton/browser-redirect/blob/master/LICENSE)
 
 # Browser Redirect ![](./static/icon48.png)
