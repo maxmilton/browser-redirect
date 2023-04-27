@@ -1,6 +1,6 @@
 {
   "name": "browser-redirect",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A dead simple browser redirector.",
   "repository": "maxmilton/browser-redirect",
   "homepage": "https://github.com/maxmilton/browser-redirect",
