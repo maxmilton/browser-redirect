@@ -51,7 +51,7 @@ See [releases on GitHub](https://github.com/maxmilton/browser-redirect/releases)
 
 MIT license. See [LICENSE](https://github.com/maxmilton/browser-redirect/blob/master/LICENSE).
 
-The [right arrow icon](https://github.com/twitter/twemoji/blob/master/assets/svg/26a1.svg) is from [twitter/twemoji](https://github.com/twitter/twemoji) which is licensed CC-BY 4.0.
+The [right arrow icon](https://github.com/twitter/twemoji/blob/master/assets/svg/27a1.svg) is from [twitter/twemoji](https://github.com/twitter/twemoji) which is licensed CC-BY 4.0.
 
 ---
 

@@ -15,11 +15,11 @@ export default {
   version_name: process.env.GITHUB_REF ? undefined : gitRef().replace(/^v/, ''),
   minimum_chrome_version: '84', // needed for declarative net request
   homepage_url: pkg.homepage,
-  // icons: {
-  //   16: 'icon16.png',
-  //   48: 'icon48.png',
-  //   128: 'icon128.png',
-  // },
+  icons: {
+    16: 'icon16.png',
+    48: 'icon48.png',
+    128: 'icon128.png',
+  },
   declarative_net_request: {
     rule_resources: [
       {
