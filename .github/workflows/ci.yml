@@ -14,8 +14,4 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build
-
-      # FIXME: REMOVE; DEBUGGING ONLY!!
-      - run: ls -la
-
       - run: bun run lint
