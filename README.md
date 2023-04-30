@@ -7,11 +7,12 @@ Browser Redirect is a simple, yet powerful browser extension that makes it easy 
 
 ## Default redirect rules
 
-| From              | To            |
-| ----------------- | ------------- |
-| `www.reddit.com`  | `teddit.net`  |
-| `www.youtube.com` | `piped.video` |
-| `m.youtube.com`   | `piped.video` |
+| From              | To                     |
+| ----------------- | ---------------------- |
+| `www.reddit.com`  | `teddit.net`           |
+| `www.youtube.com` | `piped.video`          |
+| `m.youtube.com`   | `piped.video`          |
+| `youtu.be`        | `piped.video/watch?v=` |
 
 ## Usage
 

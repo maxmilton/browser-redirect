@@ -1,3 +1,5 @@
+// https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/
+
 const REDIRECT =
   'redirect' as chrome.declarativeNetRequest.RuleActionType.REDIRECT;
 const MAIN_FRAME =
@@ -43,6 +45,20 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
     condition: {
       urlFilter: '||m.youtube.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 4,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        regexSubstitution: 'https://piped.video/watch?v=',
+      },
+    },
+    condition: {
+      regexFilter: '^https://youtu\\.be/',
       resourceTypes: [MAIN_FRAME],
     },
   },

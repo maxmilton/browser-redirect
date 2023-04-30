@@ -30,9 +30,10 @@ const manifest: chrome.runtime.Manifest = {
   },
   permissions: ['declarativeNetRequest', 'declarativeNetRequestFeedback'],
   host_permissions: [
-    '*://www.reddit.com/*',
-    '*://www.youtube.com/*',
-    '*://m.youtube.com/*',
+    'https://www.reddit.com/*',
+    'https://www.youtube.com/*',
+    'https://m.youtube.com/*',
+    'https://youtu.be/*',
   ],
   offline_enabled: true,
   incognito: 'spanning',
