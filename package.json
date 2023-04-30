@@ -1,7 +1,7 @@
 {
   "name": "browser-redirect",
   "version": "1.2.0",
-  "description": "Automatically redirect your browser web traffic according to your rules.",
+  "description": "Automatically redirect top level domains according to predefined rules.",
   "repository": "maxmilton/browser-redirect",
   "homepage": "https://github.com/maxmilton/browser-redirect",
   "author": "Max Milton <max@happyhackers.xyz>",
