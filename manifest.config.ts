@@ -29,7 +29,11 @@ const manifest: chrome.runtime.Manifest = {
     ],
   },
   permissions: ['declarativeNetRequest', 'declarativeNetRequestFeedback'],
-  host_permissions: ['*://www.reddit.com/*'],
+  host_permissions: [
+    '*://www.reddit.com/*',
+    '*://www.youtube.com/*',
+    '*://m.youtube.com/*',
+  ],
   offline_enabled: true,
   incognito: 'spanning',
 };

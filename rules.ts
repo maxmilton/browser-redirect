@@ -18,6 +18,34 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
       resourceTypes: [MAIN_FRAME],
     },
   },
+  {
+    id: 2,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'piped.video' },
+      },
+    },
+    condition: {
+      urlFilter: '||www.youtube.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 3,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'piped.video' },
+      },
+    },
+    condition: {
+      urlFilter: '||m.youtube.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
 ];
 
 export default rules;
