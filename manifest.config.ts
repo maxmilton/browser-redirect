@@ -6,8 +6,7 @@
 import { gitRef } from 'git-ref';
 import pkg from './package.json' assert { type: 'json' };
 
-/** @type {chrome.runtime.Manifest} */
-export default {
+const manifest: chrome.runtime.Manifest = {
   manifest_version: 3,
   name: 'Browser Redirect',
   description: pkg.description,
@@ -33,6 +32,6 @@ export default {
   host_permissions: ['*://www.reddit.com/*'],
   offline_enabled: true,
   incognito: 'spanning',
-  // // https://chrome.google.com/webstore/detail/browser-redirect/xxxxx
-  // key: 'XXXXX',
 };
+
+export default manifest;
