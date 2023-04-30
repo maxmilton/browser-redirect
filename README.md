@@ -5,7 +5,7 @@
 
 Browser Redirect is a browser extension that redirects top level domains according to predefined rules. It uses the [`declarativeNetRequest` API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/), which provides a faster and more secure way to handle redirects than other [alternatives](https://github.com/libredirect/browser_extension), as it cannot read the content of web pages.
 
-The extension comes with a predefined set of static rules that are geared towards privacy friendly alternative frontends. You can customize it to meet specific needs.
+The extension comes with a predefined set of static rules that are geared towards privacy friendly alternative frontends. You can customize it to meet your specific needs.
 
 ## Default Redirect Rules
 
