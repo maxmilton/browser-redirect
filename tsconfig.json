@@ -6,23 +6,21 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    // "allowJs": true,
-    // "checkJs": true,
+    "allowJs": true,
+    "checkJs": true,
     "noEmit": true,
-
-    // "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
-    "types": ["bun-types", "chrome"],
 
     "strict": true,
     "allowUnreachableCode": false,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": false, // covered by eslint
     "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "useDefineForClassFields": true,
-    "verbatimModuleSyntax": true
+    "noUnusedLocals": false, // covered by eslint
+    "noUnusedParameters": false, // covered by eslint
+    "verbatimModuleSyntax": true,
+
+    "types": ["bun-types", "chrome"]
   },
   "exclude": ["**/dist", "**/node_modules", "**/.eslintrc.cjs", "**/build.ts"]
 }
