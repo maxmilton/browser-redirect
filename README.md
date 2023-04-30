@@ -22,6 +22,7 @@ To use Browser Redirect, follow these easy steps:
    1. Navigate to <chrome://extensions/>.
    1. Toggle "Developer mode" to the on position.
    1. Click "Load unpacked" and select the dist directory.
+1. Optionally, to also redirect in private tabs, go into the extension's "Details" and toggle "Allow in Private" to on
 
 ### Optional linting
 
