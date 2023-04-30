@@ -3,11 +3,13 @@
 
 # Browser Redirect ![](./static/icon48.png)
 
-Browser Redirect is a simple, yet powerful browser extension that makes it easy to automatically redirect your web traffic according to your preferred rules. Built with a predefined set of static rules for a simple and strightforward experience.
+Browser Redirect is a browser extension that redirects top level domains according to predefined rules. It uses the [`declarativeNetRequest` API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/), which provides a faster and more secure way to handle redirects than other [alternatives](https://github.com/libredirect/browser_extension), as it cannot read the content of web pages.
 
-Faster than alternitives like the [libredirect](https://github.com/libredirect/browser_extension) because this extension uses the newer [Chrome `declarativeNetRequest` API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/). It also means this extension can never read your web pages either for added security.
+The extension comes with a predefined set of static rules that are geared towards privacy friendly alternative frontends. You can customize it to meet specific needs.
 
-## Default redirect rules
+## Default Redirect Rules
+
+The following table shows the default redirect rules included in the extension:
 
 | From                       | To                     |
 | -------------------------- | ---------------------- |
@@ -35,23 +37,23 @@ Disabled/alternatives:
 
 ## Usage
 
-To use Browser Redirect, follow these easy steps:
+Follow these steps to use Browser Redirect:
 
-1. Install the bun JavaScript runtime, if not already installed, by following the instructions at <https://bun.sh>.
-1. Clone the project locally and edit the `rules.ts` file to add your own custom redirect rules.
+1. Install the [Bun JavaScript runtime](https://bun.sh), if not already installed.
+1. Clone the project and edit the `rules.ts` file to add custom redirect rules.
 1. Build the project using `bun run build`.
-1. Load the extension into your browser by following these steps:
+1. Load the extension into your browser:
    1. Navigate to <chrome://extensions/>.
-   1. Toggle "Developer mode" to the on position.
-   1. Click "Load unpacked" and select the dist directory.
-1. Optionally, to also redirect in private tabs, go into the extension's "Details" and toggle "Allow in Private" to on
+   1. Toggle "Developer mode" to the "on" position.
+   1. Click "Load unpacked" and select the `dist` directory.
+1. To enable redirecting in private tabs, toggle "Allow in Private" to "on" in the extension's "Details" page.
 
-### Optional linting
+### Optional Linting
 
 1. Install the project dependencies: `bun install`
 1. Run linting: `bun run lint`
 
-## Browser support
+## Browser Support
 
 Browser Redirect is compatible with version 84 and higher of Google Chrome and other Chromium-based browsers like Brave and Edge.
 
@@ -59,12 +61,12 @@ Browser Redirect is compatible with version 84 and higher of Google Chrome and o
 
 Report any bugs you encounter on the [GitHub issue tracker](https://github.com/maxmilton/browser-redirect/issues).
 
-### Known issues
+### Known Issues
 
 We are aware of the following issues:
 
-1. User's cannot add new rules. This is by design, as the extension uses a static rule set to simplify the implementation.
-1. The extension is not installable via the Chrome Web Store. We recommend building the extension with your own custom rules using the steps outlined above.
+1. User's cannot dynamically add new rules. This is by design, as the extension uses a static rule set to simplify the implementation. You need to edit `rules.ts` and rebuild the project to make changes.
+1. The extension is not installable via the Chrome Web Store. Build the extension with your own custom rules using the steps outlined above.
 
 ## Changelog
 
