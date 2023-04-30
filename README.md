@@ -5,14 +5,33 @@
 
 Browser Redirect is a simple, yet powerful browser extension that makes it easy to automatically redirect your web traffic according to your preferred rules. Built with a predefined set of static rules for a simple and strightforward experience.
 
+Faster than alternitives like the [libredirect](https://github.com/libredirect/browser_extension) because this extension uses the newer [Chrome `declarativeNetRequest` API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/). It also means this extension can never read your web pages either for added security.
+
 ## Default redirect rules
 
-| From              | To                     |
-| ----------------- | ---------------------- |
-| `www.reddit.com`  | `teddit.net`           |
-| `www.youtube.com` | `piped.video`          |
-| `m.youtube.com`   | `piped.video`          |
-| `youtu.be`        | `piped.video/watch?v=` |
+| From                       | To                     |
+| -------------------------- | ---------------------- |
+| `www.reddit.com`           | `libreddit.pufe.org`   |
+| `www.youtube.com`          | `piped.video`          |
+| `www.youtube-nocookie.com` | `piped.video`          |
+| `m.youtube.com`            | `piped.video`          |
+| `youtu.be`                 | `piped.video/watch?v=` |
+| `twitter.com`              | `nitter.pufe.org`      |
+| `imgur.com`                | `rimgo.bcow.xyz`       |
+| `www.quora.com`            | `quetre.pufe.org`      |
+| `imdb.com`                 | `libremdb.iket.me`     |
+| `medium.com`               | `scribe.rip`           |
+| `wikipedia.org`            | `wikiless.pufe.org`    |
+| `stackoverflow.com`        | `code.whatever.social` |
+
+<!--
+Disabled/alternatives:
+| `www.reddit.com`           | `teddit.net`           |
+| `twitter.com`              | `nitter.net`           |
+| `www.quora.com`            | `quetre.iket.me`       |
+| `github.com`               | `gh.odyssey346.dev`    |
+| `translate.google.com`     | `lingva.ml             |
+-->
 
 ## Usage
 
