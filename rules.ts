@@ -68,7 +68,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
   },
   {
     id: 5,
-    priority: 1,
+    priority: 2,
     action: {
       type: REDIRECT,
       redirect: {
@@ -154,6 +154,20 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
   },
   {
     id: 11,
+    priority: 2,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        regexSubstitution: 'https://scribe.rip/@\\1/',
+      },
+    },
+    condition: {
+      regexFilter: '^https://(\\w+)\\.medium\\.com/',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 12,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -167,7 +181,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 12,
+    id: 13,
     priority: 1,
     action: {
       type: REDIRECT,
