@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 // https://developer.chrome.com/docs/extensions/mv3/manifest/
 // https://developer.chrome.com/docs/extensions/reference/
 

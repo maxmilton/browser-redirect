@@ -7,7 +7,7 @@ module.exports = {
   reportUnusedDisableDirectives: true,
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['./tsconfig.lint.json'],
+    project: ['tsconfig.json', 'tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
   extends: [
@@ -24,12 +24,10 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     '@typescript-eslint/explicit-module-boundary-types': ERROR,
-    'import/no-relative-packages': OFF,
     'import/prefer-default-export': OFF,
     'no-restricted-syntax': OFF,
     'no-void': OFF,
     'prettier/prettier': WARN,
-    'unicorn/filename-case': OFF,
     'unicorn/no-abusive-eslint-disable': WARN,
     'unicorn/no-null': OFF,
     'unicorn/prefer-module': WARN,
@@ -38,7 +36,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['build.ts', '.eslintrc.cjs'],
+      files: ['build.ts', 'manifest.config.ts'],
       rules: {
         'import/no-extraneous-dependencies': OFF,
       },
