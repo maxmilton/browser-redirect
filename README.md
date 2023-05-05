@@ -49,6 +49,10 @@ Follow these steps to use Browser Redirect:
    1. Click "Load unpacked" and select the `dist` directory.
 1. To enable redirecting in private tabs, toggle "Allow in Private" to "on" in the extension's "Details" page.
 
+### Pre-built Package
+
+If you are satisfied with the default rules, you can download `chrome-extension.zip` from the [latest release](https://github.com/maxmilton/browser-redirect/releases/latest). Then follow the instructions above starting from step 4, except instead of the `dist` directory, select the downloaded `zip` file.
+
 ### Optional Linting
 
 1. Install the project dependencies: `bun install`
