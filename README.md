@@ -23,8 +23,9 @@ The following table shows the default redirect rules included in the extension:
 | `www.quora.com`            | `quetre.pufe.org`      |
 | `imdb.com`                 | `libremdb.iket.me`     |
 | `medium.com`               | `scribe.rip`           |
-| `X.medium.com`             | `scribe.rip/@X`        |
+| `*.medium.com`             | `scribe.rip/@*`        |
 | `wikipedia.org`            | `wikiless.pufe.org`    |
+| `en.wikipedia.org`         | `wikiless.pufe.org`    |
 | `stackoverflow.com`        | `code.whatever.social` |
 
 <!--

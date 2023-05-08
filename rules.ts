@@ -186,6 +186,20 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
+        transform: { host: 'wikiless.pufe.org' },
+      },
+    },
+    condition: {
+      urlFilter: '||en.wikipedia.org',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 14,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
         transform: { host: 'code.whatever.social' },
       },
     },

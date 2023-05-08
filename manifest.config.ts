@@ -40,6 +40,7 @@ const manifest: chrome.runtime.Manifest = {
     'https://medium.com/*',
     'https://*.medium.com/*',
     'https://wikipedia.org/*',
+    'https://en.wikipedia.org/*',
     'https://stackoverflow.com/*',
     // 'https://github.com/*',
     // 'https://translate.google.com/*',
