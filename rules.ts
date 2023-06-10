@@ -30,12 +30,13 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'piped.video' },
+        // transform: { host: 'teddit.net' },
+        transform: { host: 'libreddit.pufe.org' },
       },
     },
     condition: {
-      urlFilter: '||www.youtube.com',
-      resourceTypes: [MAIN_FRAME, SUB_FRAME],
+      urlFilter: '||old.reddit.com',
+      resourceTypes: [MAIN_FRAME],
     },
   },
   {
@@ -48,7 +49,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
       },
     },
     condition: {
-      urlFilter: '||www.youtube-nocookie.com',
+      urlFilter: '||www.youtube.com',
       resourceTypes: [MAIN_FRAME, SUB_FRAME],
     },
   },
@@ -62,12 +63,26 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
       },
     },
     condition: {
+      urlFilter: '||www.youtube-nocookie.com',
+      resourceTypes: [MAIN_FRAME, SUB_FRAME],
+    },
+  },
+  {
+    id: 5,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'piped.video' },
+      },
+    },
+    condition: {
       urlFilter: '||m.youtube.com',
       resourceTypes: [MAIN_FRAME],
     },
   },
   {
-    id: 5,
+    id: 6,
     priority: 2,
     action: {
       type: REDIRECT,
@@ -81,7 +96,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 6,
+    id: 7,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -96,7 +111,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 7,
+    id: 8,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -110,7 +125,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 8,
+    id: 9,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -125,7 +140,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 9,
+    id: 10,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -139,7 +154,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 10,
+    id: 11,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -153,7 +168,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 11,
+    id: 12,
     priority: 2,
     action: {
       type: REDIRECT,
@@ -167,7 +182,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 12,
+    id: 13,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -181,7 +196,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 13,
+    id: 14,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -195,7 +210,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     },
   },
   {
-    id: 14,
+    id: 15,
     priority: 1,
     action: {
       type: REDIRECT,

@@ -14,6 +14,7 @@ The following table shows the default redirect rules included in the extension:
 | From                       | To                     |
 | -------------------------- | ---------------------- |
 | `www.reddit.com`           | `libreddit.pufe.org`   |
+| `old.reddit.com`           | `libreddit.pufe.org`   |
 | `www.youtube.com`          | `piped.video`          |
 | `www.youtube-nocookie.com` | `piped.video`          |
 | `m.youtube.com`            | `piped.video`          |

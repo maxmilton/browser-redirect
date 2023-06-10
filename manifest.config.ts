@@ -10,7 +10,7 @@ const manifest: chrome.runtime.Manifest = {
   description: pkg.description,
   version: pkg.version,
   version_name: process.env.GITHUB_REF ? undefined : gitRef().replace(/^v/, ''),
-  minimum_chrome_version: '84', // needed for declarative net request
+  minimum_chrome_version: '84', // for declarative net request
   homepage_url: pkg.homepage,
   icons: {
     16: 'icon16.png',
@@ -26,9 +26,13 @@ const manifest: chrome.runtime.Manifest = {
       },
     ],
   },
-  permissions: ['declarativeNetRequest', 'declarativeNetRequestFeedback'],
+  permissions: [
+    'declarativeNetRequest', // https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/
+    'declarativeNetRequestFeedback',
+  ],
   host_permissions: [
     'https://www.reddit.com/*',
+    'https://old.reddit.com/*',
     'https://www.youtube.com/*',
     'https://www.youtube-nocookie.com/*',
     'https://m.youtube.com/*',
