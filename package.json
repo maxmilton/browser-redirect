@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@types/chrome": "0.0.240",
-    "@typescript-eslint/eslint-plugin": "5.61.0",
-    "@typescript-eslint/parser": "5.61.0",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
     "bun-types": "0.6.13",
     "eslint": "8.44.0",
     "eslint-config-airbnb-base": "15.0.0",
