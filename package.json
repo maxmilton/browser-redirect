@@ -15,9 +15,9 @@
     "prebuild": "rm -rf dist; cp -r static dist"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.244",
-    "@typescript-eslint/eslint-plugin": "6.5.0",
-    "@typescript-eslint/parser": "6.5.0",
+    "@types/chrome": "0.0.245",
+    "@typescript-eslint/eslint-plugin": "6.6.0",
+    "@typescript-eslint/parser": "6.6.0",
     "bun-types": "0.8.1",
     "eslint": "8.48.0",
     "eslint-config-airbnb-base": "15.0.0",
