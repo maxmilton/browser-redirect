@@ -1,17 +1,32 @@
 // https://developer.chrome.com/docs/extensions/mv3/manifest/
 // https://developer.chrome.com/docs/extensions/reference/
 
-import { gitRef } from 'git-ref';
 import pkg from './package.json' assert { type: 'json' };
 
-const manifest: chrome.runtime.Manifest = {
+function gitRef() {
+  return Bun.spawnSync([
+    'git',
+    'describe',
+    '--always',
+    '--dirty=-dev',
+    '--broken',
+  ])
+    .stdout.toString()
+    .trim()
+    .replace(/^v/, '');
+}
+
+export const createManifest = (
+  debug = !process.env.CI,
+): chrome.runtime.ManifestV3 => ({
   manifest_version: 3,
   name: 'Browser Redirect',
   description: pkg.description,
-  version: pkg.version,
-  version_name: process.env.GITHUB_REF ? undefined : gitRef().replace(/^v/, ''),
-  minimum_chrome_version: '84', // for declarative net request
   homepage_url: pkg.homepage,
+  version: pkg.version,
+  // shippable releases should not have a named version
+  version_name: debug ? gitRef() : undefined,
+  minimum_chrome_version: '84', // for declarative net request
   icons: {
     16: 'icon16.png',
     48: 'icon48.png',
@@ -51,6 +66,4 @@ const manifest: chrome.runtime.Manifest = {
   ],
   offline_enabled: true,
   incognito: 'spanning',
-};
-
-export default manifest;
+});
