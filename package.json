@@ -15,7 +15,7 @@
     "prebuild": "rm -rf dist; cp -r static dist"
   },
   "devDependencies": {
-    "@types/bun": "1.0.0",
+    "@types/bun": "1.0.4",
     "@types/chrome": "0.0.256",
     "@typescript-eslint/eslint-plugin": "6.18.1",
     "@typescript-eslint/parser": "6.18.1",
