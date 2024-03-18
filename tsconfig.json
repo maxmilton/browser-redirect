@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "module": "esnext",
     "target": "esnext",
+    "module": "esnext",
+    "moduleDetection": "force",
     "moduleResolution": "bundler",
-    "allowJs": false,
     "esModuleInterop": false,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "allowJs": false,
 
     "strict": true,
     "allowUnreachableCode": false,
@@ -17,12 +18,7 @@
     "noUnusedLocals": false, // covered by eslint
     "noUnusedParameters": false, // covered by eslint
     "verbatimModuleSyntax": true
-
-    // TODO: Remove once @types/bun pulls in bun-types v1.0.19+ (but it
-    // currently depends on in v1.0.18); when @types/bun releases new version.
-    //  ↳ Also remember to remove bun-types from package.json#overrides too!
-    // "types": ["bun-types", "chrome"]
   },
-  "include": ["build.ts", "rules.ts", "*.config.ts"],
+  "include": ["build.ts", "rules.ts", "*.config.ts", "*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
