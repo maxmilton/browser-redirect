@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.6.1",
-    "@types/bun": "1.0.8",
+    "@types/bun": "1.1.1",
     "@types/chrome": "0.0.263",
     "@typescript-eslint/eslint-plugin": "7.3.0",
     "@typescript-eslint/parser": "7.3.0",
