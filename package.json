@@ -17,7 +17,7 @@
     "prebuild": "rm -rf dist; cp -r static dist"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.6.1",
+    "@biomejs/biome": "1.7.2",
     "@types/bun": "1.0.8",
     "@types/chrome": "0.0.263",
     "@typescript-eslint/eslint-plugin": "7.3.0",
