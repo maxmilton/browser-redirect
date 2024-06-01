@@ -91,7 +91,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
       },
     },
     condition: {
-      regexFilter: '^https://youtu\\.be/',
+      regexFilter: String.raw`^https://youtu\.be/`,
       resourceTypes: [MAIN_FRAME],
     },
   },
@@ -173,11 +173,11 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        regexSubstitution: 'https://scribe.rip/@\\1/',
+        regexSubstitution: String.raw`https://scribe.rip/@\1/`,
       },
     },
     condition: {
-      regexFilter: '^https://(\\w+)\\.medium\\.com/',
+      regexFilter: String.raw`^https://(\w+)\.medium\.com/`,
       resourceTypes: [MAIN_FRAME],
     },
   },
