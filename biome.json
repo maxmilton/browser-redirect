@@ -54,10 +54,8 @@
         "noConsoleLog": "warn",
         "noConstEnum": "off",
         "noExplicitAny": "off",
+        "noFocusedTests": "error",
         "noMisrefactoredShorthandAssign": "error"
-      },
-      "nursery": {
-        "noFocusedTests": "error"
       }
     }
   },
