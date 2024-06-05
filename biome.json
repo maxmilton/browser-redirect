@@ -19,7 +19,7 @@
     "globals": ["chrome"],
     "formatter": {
       "semicolons": "always",
-      "trailingComma": "all",
+      "trailingCommas": "all",
       "quoteStyle": "single"
     }
   },
