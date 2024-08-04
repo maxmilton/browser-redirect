@@ -6,7 +6,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    ".eslintrc.cjs",
+    "*.cjs",
     "package.json" // imported in manifest.config.ts
   ]
 }
