@@ -8,15 +8,14 @@ const MAIN_FRAME =
 const SUB_FRAME =
   'sub_frame' as chrome.declarativeNetRequest.ResourceType.SUB_FRAME;
 
-const rules: chrome.declarativeNetRequest.Rule[] = [
+export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
   {
     id: 1,
     priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
-        // transform: { host: 'teddit.net' },
-        transform: { host: 'libreddit.pufe.org' },
+        transform: { host: 'redlib.privacyredirect.com' },
       },
     },
     condition: {
@@ -30,8 +29,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        // transform: { host: 'teddit.net' },
-        transform: { host: 'libreddit.pufe.org' },
+        transform: { host: 'redlib.privacyredirect.com' },
       },
     },
     condition: {
@@ -101,8 +99,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        // transform: { host: 'nitter.net' },
-        transform: { host: 'nitter.pufe.org' },
+        transform: { host: 'nitter.net' },
       },
     },
     condition: {
@@ -116,7 +113,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'rimgo.bcow.xyz' },
+        transform: { host: 'rimgo.privacyredirect.com' },
       },
     },
     condition: {
@@ -130,8 +127,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        // transform: { host: 'quetre.iket.me' },
-        transform: { host: 'quetre.pufe.org' },
+        transform: { host: 'quetre.iket.me' },
       },
     },
     condition: {
@@ -159,7 +155,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'scribe.rip' },
+        transform: { host: 'scribe.privacyredirect.com' },
       },
     },
     condition: {
@@ -173,7 +169,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        regexSubstitution: String.raw`https://scribe.rip/@\1/`,
+        regexSubstitution: String.raw`https://scribe.privacyredirect.com/@\1/`,
       },
     },
     condition: {
@@ -187,7 +183,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'wikiless.pufe.org' },
+        transform: { host: 'wikiless.privacyredirect.com' },
       },
     },
     condition: {
@@ -201,7 +197,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'wikiless.pufe.org' },
+        transform: { host: 'wikiless.privacyredirect.com' },
       },
     },
     condition: {
@@ -215,7 +211,7 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'code.whatever.social' },
+        transform: { host: 'anonymousoverflow.privacyredirect.com/' },
       },
     },
     condition: {
@@ -223,6 +219,60 @@ const rules: chrome.declarativeNetRequest.Rule[] = [
       resourceTypes: [MAIN_FRAME],
     },
   },
+  {
+    id: 16,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'binternet.privacyredirect.com' },
+      },
+    },
+    condition: {
+      urlFilter: '||www.pinterest.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 17,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'biblioreads.privacyredirect.com' },
+      },
+    },
+    condition: {
+      urlFilter: '||www.goodreads.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 18,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'translate.privacyredirect.com' },
+      },
+    },
+    condition: {
+      urlFilter: '||translate.google.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 19,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'safetwitch.privacyredirect.com' },
+      },
+    },
+    condition: {
+      urlFilter: '||www.twitch.tv',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
 ];
-
-export default rules;
