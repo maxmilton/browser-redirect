@@ -9,12 +9,12 @@
   "private": true,
   "scripts": {
     "build": "bun build.ts",
-    "lint": "bun run lint:fmt && bun run lint:js && bun run lint:ts",
-    "lint:fmt": "biome check .",
-    "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.mjs,.ts .",
+    "lint": "bun lint:fmt && bun lint:js && bun lint:ts",
+    "lint:fmt": "biome check",
+    "lint:js": "eslint",
     "lint:ts": "tsc --noEmit",
-    "test": "echo 'No tests'",
-    "prebuild": "rm -rf dist; cp -r static dist"
+    "test": "bun test",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
