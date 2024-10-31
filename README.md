@@ -87,4 +87,4 @@ The [right arrow icon](https://github.com/twitter/twemoji/blob/master/assets/svg
 
 ---
 
-© 2023 [Max Milton](https://maxmilton.com)
+© 2024 [Max Milton](https://maxmilton.com)
