@@ -27,7 +27,9 @@ export const test = baseTest.extend<{
     await use(context);
     await context.close();
   },
-  async extensionId({ context }, use) {
+  // async extensionId({ context }, use) {
+  // biome-ignore lint/correctness/noEmptyPattern: temp
+  async extensionId({}, use) {
     // let [background] = context.serviceWorkers();
     // // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     // background ??= await context.waitForEvent('serviceworker');
