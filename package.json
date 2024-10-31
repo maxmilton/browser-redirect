@@ -1,6 +1,6 @@
 {
   "name": "browser-redirect",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Automatically redirect top level domains according to predefined rules.",
   "repository": "maxmilton/browser-redirect",
   "homepage": "https://github.com/maxmilton/browser-redirect",
