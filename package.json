@@ -21,7 +21,7 @@
     "@eslint/js": "9.18.0",
     "@maxmilton/eslint-config": "0.0.8",
     "@maxmilton/test-utils": "0.0.8",
-    "@playwright/test": "1.49.1",
+    "@playwright/test": "1.50.1",
     "@types/bun": "1.1.16",
     "@types/chrome": "0.0.294",
     "eslint": "9.18.0",
