@@ -22,7 +22,7 @@
     "@maxmilton/eslint-config": "0.0.8",
     "@maxmilton/test-utils": "0.0.8",
     "@playwright/test": "1.49.1",
-    "@types/bun": "1.1.16",
+    "@types/bun": "1.2.2",
     "@types/chrome": "0.0.294",
     "eslint": "9.18.0",
     "eslint-plugin-unicorn": "56.0.1",
