@@ -4,6 +4,7 @@
   "editor.formatOnType": false,
   "eslint.format.enable": false,
   "eslint.useFlatConfig": true,
+  "files.associations": { "package.json": "jsonc" },
   "git.branchProtection": ["master", "next"],
   "js/ts.implicitProjectConfig.checkJs": true,
   "prettier.enable": false, // use biome instead
