@@ -10,7 +10,7 @@
         "@maxmilton/test-utils": "0.0.8",
         "@playwright/test": "1.50.1",
         "@types/bun": "1.2.4",
-        "@types/chrome": "0.0.307",
+        "@types/chrome": "0.0.313",
         "eslint": "9.21.0",
         "eslint-plugin-unicorn": "57.0.0",
         "typescript": "5.8.2",
@@ -81,7 +81,7 @@
 
     "@types/bun": ["@types/bun@1.2.4", "", { "dependencies": { "bun-types": "1.2.4" } }, "sha512-QtuV5OMR8/rdKJs213iwXDpfVvnskPXY/S0ZiFbsTjQZycuqPbMW8Gf/XhLfwE5njW8sxI2WjISURXPlHypMFA=="],
 
-    "@types/chrome": ["@types/chrome@0.0.307", "", { "dependencies": { "@types/filesystem": "*", "@types/har-format": "*" } }, "sha512-IHqsTT+JT6vlFTcRWaih7saaEYhFCT13KRgRIRFKjXYOG3g0ummwXAGKtaxK9Zzz6yYsYvbEut91exTX0F/xSg=="],
+    "@types/chrome": ["@types/chrome@0.0.313", "", { "dependencies": { "@types/filesystem": "*", "@types/har-format": "*" } }, "sha512-9R5T7gTaYZhkxlu+Ho4wk9FL+y/werWQY2yjGWSqCuiTsqS7nL/BE5UMTP6rU7J+oIG2FRKqrEycHhJATeltVA=="],
 
     "@types/estree": ["@types/estree@1.0.6", "", {}, "sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw=="],
 
