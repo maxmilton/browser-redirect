@@ -9,12 +9,12 @@ describe('dist files', () => {
   // "application/octet-stream". Bun.file() does not resolve symlinks so it's
   // safe to infer that all these files are therefore regular files.
   const distFiles: [filename: string, type: string, minBytes?: number, maxBytes?: number][] = [
-    ['icon16.png', 'image/png'],
-    ['icon48.png', 'image/png'],
-    ['icon128.png', 'image/png'],
-    ['manifest.json', 'application/json;charset=utf-8'],
-    ['rules.json', 'application/json;charset=utf-8'],
-    // ['sw.js', 'text/javascript;charset=utf-8'],
+    ['icon16.png', 'image/png', 200, 250],
+    ['icon48.png', 'image/png', 350, 450],
+    ['icon128.png', 'image/png', 650, 800],
+    ['manifest.json', 'application/json;charset=utf-8', 900, 1200],
+    ['rules.json', 'application/json;charset=utf-8', 2000, 6000],
+    // ['sw.js', 'text/javascript;charset=utf-8'], // debugging builds only
   ];
 
   for (const [filename, type, minBytes, maxBytes] of distFiles) {
@@ -40,7 +40,9 @@ describe('dist files', () => {
 
   test('contains no extra files', async () => {
     expect.assertions(1);
-    const distDir = await readdir('dist');
-    expect(distDir).toHaveLength(distFiles.length);
+    const files = await readdir('dist');
+    // HACK: Remove _metadata directory, which is created by browsers on extension install.
+    files.splice(files.indexOf('_metadata'), 1);
+    expect(files).toHaveLength(distFiles.length);
   });
 });
