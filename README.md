@@ -9,34 +9,32 @@ The extension comes with a predefined set of static rules that are geared toward
 
 ## Default Redirect Rules
 
+> See [rules.config.ts](./rules.config.ts).
+
 The following table shows the default redirect rules included in the extension:
 
-| From                       | To                     |
-| -------------------------- | ---------------------- |
-| `www.reddit.com`           | `libreddit.pufe.org`   |
-| `old.reddit.com`           | `libreddit.pufe.org`   |
-| `www.youtube.com`          | `piped.video`          |
-| `www.youtube-nocookie.com` | `piped.video`          |
-| `m.youtube.com`            | `piped.video`          |
-| `youtu.be`                 | `piped.video/watch?v=` |
-| `twitter.com`              | `nitter.pufe.org`      |
-| `imgur.com`                | `rimgo.bcow.xyz`       |
-| `www.quora.com`            | `quetre.pufe.org`      |
-| `imdb.com`                 | `libremdb.iket.me`     |
-| `medium.com`               | `scribe.rip`           |
-| `*.medium.com`             | `scribe.rip/@*`        |
-| `wikipedia.org`            | `wikiless.pufe.org`    |
-| `en.wikipedia.org`         | `wikiless.pufe.org`    |
-| `stackoverflow.com`        | `code.whatever.social` |
-
-<!--
-Disabled/alternatives:
-| `www.reddit.com`           | `teddit.net`           |
-| `twitter.com`              | `nitter.net`           |
-| `www.quora.com`            | `quetre.iket.me`       |
-| `github.com`               | `gh.odyssey346.dev`    |
-| `translate.google.com`     | `lingva.ml             |
--->
+| From                       | To                                      |
+| -------------------------- | --------------------------------------- |
+| `www.reddit.com`           | `redlib.privacyredirect.com`            |
+| `old.reddit.com`           | `redlib.privacyredirect.com`            |
+| `www.youtube.com`          | `piped.video`                           |
+| `www.youtube-nocookie.com` | `piped.video`                           |
+| `m.youtube.com`            | `piped.video`                           |
+| `youtu.be`                 | `piped.video/watch?v=`                  |
+| `x.com`                    | `nitter.privacyredirect.com`            |
+| `twitter.com`              | `nitter.privacyredirect.com`            |
+| `imgur.com`                | `rimgo.privacyredirect.com`             |
+| `www.quora.com`            | `quetre.privacyredirect.com`            |
+| `imdb.com`                 | `libremdb.privacyredirect.com`          |
+| `medium.com`               | `scribe.privacyredirect.com`            |
+| `*.medium.com`             | `scribe.privacyredirect.com/@*`         |
+| `wikipedia.org`            | `wikiless.privacyredirect.com`          |
+| `en.wikipedia.org`         | `wikiless.privacyredirect.com`          |
+| `stackoverflow.com`        | `anonymousoverflow.privacyredirect.com` |
+| `www.pinterest.com`        | `binternet.privacyredirect.com`         |
+| `www.goodreads.com`        | `biblioreads.privacyredirect.com`       |
+| `translate.google.com`     | `translate.privacyredirect.com`         |
+| `www.twitch.tv`            | `safetwitch.privacyredirect.com`        |
 
 ## Usage
 
@@ -60,6 +58,13 @@ If you are satisfied with the default rules, you can download `chrome-extension.
 1. Install the project dependencies: `bun install`
 1. Run linting: `bun run lint`
 
+### Debugging Rules
+
+1. Uncomment `declarativeNetRequestFeedback` permissions in manifest.
+1. Uncomment `background.service_worker` in manifest.
+1. Rebuild the project and reload the extension in your browser.
+1. Open devtools for the background page and observe the console for feedback.
+
 ## Browser Support
 
 Browser Redirect is compatible with version 84 and higher of Google Chrome and other Chromium-based browsers like Brave and Edge.
@@ -72,7 +77,7 @@ Report any bugs you encounter on the [GitHub issue tracker](https://github.com/m
 
 We are aware of the following issues:
 
-1. User's cannot dynamically add new rules. This is by design, as the extension uses a static rule set to simplify the implementation. You need to edit `rules.ts` and rebuild the project to make changes.
+1. User's cannot dynamically add new rules. This is by design, as the extension uses a static rule set to simplify the implementation. You need to edit `rules.config.ts` and rebuild the project to make changes.
 1. The extension is not installable via the Chrome Web Store. Build the extension with your own custom rules using the steps outlined above.
 
 ## Changelog
@@ -83,8 +88,8 @@ See [releases on GitHub](https://github.com/maxmilton/browser-redirect/releases)
 
 MIT license. See [LICENSE](https://github.com/maxmilton/browser-redirect/blob/master/LICENSE).
 
-The [right arrow icon](https://github.com/twitter/twemoji/blob/master/assets/svg/27a1.svg) is from [twitter/twemoji](https://github.com/twitter/twemoji) which is licensed CC-BY 4.0.
+The [right arrow curving left icon](https://github.com/twitter/twemoji/blob/master/assets/svg/21aa.svg) is from [twitter/twemoji](https://github.com/twitter/twemoji) which is licensed CC-BY 4.0.
 
 ---
 
-© 2024 [Max Milton](https://maxmilton.com)
+© 2025 [Max Milton](https://maxmilton.com)

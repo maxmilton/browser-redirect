@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
 import dist from '../../dist/manifest.json' with { type: 'json' };
-import { createManifest } from '../../manifest.config';
+import { createManifest } from '../../src/manifest';
 
 const manifest = createManifest(true);
 
@@ -103,10 +103,10 @@ test('manifest version is v3', () => {
 });
 
 test('permissions contains expected values', () => {
-  expect.assertions(3);
+  expect.assertions(2);
   expect(manifest.permissions).toContain('declarativeNetRequest');
-  expect(manifest.permissions).toContain('declarativeNetRequestFeedback');
-  expect(manifest.permissions).toHaveLength(2);
+  // expect(manifest.permissions).toContain('declarativeNetRequestFeedback'); // debugging builds only
+  expect(manifest.permissions).toHaveLength(1);
 });
 
 test('has correct icons.* values', () => {
@@ -119,7 +119,7 @@ test('has correct icons.* values', () => {
 
 // test('has correct service_worker value', () => {
 //   expect.assertions(1);
-//   expect(manifest.background?.service_worker).toBe('sw.js');
+//   expect(manifest.background?.service_worker).toBe('sw.js'); // debugging builds only
 // });
 
 test('has version_name when debug option is true', () => {
@@ -149,7 +149,6 @@ const restoreCI = () => {
     // work in bun for env vars that were set before the process started.
     //  ↳ https://github.com/oven-sh/bun/issues/1559#issuecomment-1440507885
     //  ↳ May be fixed, need to investigate; https://github.com/oven-sh/bun/pull/7614
-    // biome-ignore lint/performance/noDelete: see comment above
     delete process.env.CI;
   } else {
     process.env.CI = oldCI;

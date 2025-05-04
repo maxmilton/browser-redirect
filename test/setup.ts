@@ -4,9 +4,9 @@ const noop = () => {};
 
 function setupMocks(): void {
   // @ts-expect-error - noop stub
-  global.performance.mark = noop;
+  globalThis.performance.mark = noop;
   // @ts-expect-error - noop stub
-  global.performance.measure = noop;
+  globalThis.performance.measure = noop;
 }
 
 setupMocks();

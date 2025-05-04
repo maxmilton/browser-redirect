@@ -13,8 +13,8 @@ describe('dist files', () => {
     ['icon48.png', 'image/png'],
     ['icon128.png', 'image/png'],
     ['manifest.json', 'application/json;charset=utf-8'],
-    // ['sw.js', 'text/javascript;charset=utf-8', 150, 300],
     ['rules.json', 'application/json;charset=utf-8'],
+    // ['sw.js', 'text/javascript;charset=utf-8'],
   ];
 
   for (const [filename, type, minBytes, maxBytes] of distFiles) {

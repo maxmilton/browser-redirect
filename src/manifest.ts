@@ -1,7 +1,7 @@
 // https://developer.chrome.com/docs/extensions/mv3/manifest/
 // https://developer.chrome.com/docs/extensions/reference/
 
-import pkg from './package.json' assert { type: 'json' };
+import pkg from '../package.json' with { type: 'json' };
 
 function gitRef() {
   return Bun.spawnSync([
@@ -41,9 +41,11 @@ export const createManifest = (
       },
     ],
   },
+  // action: {}, // uncomment for debugging
+  // background: { service_worker: 'sw.js' }, // uncomment for debugging
   permissions: [
+    // 'declarativeNetRequestFeedback', // uncomment for debugging
     'declarativeNetRequest', // https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/
-    'declarativeNetRequestFeedback',
   ],
   host_permissions: [
     'https://www.reddit.com/*',
@@ -52,6 +54,7 @@ export const createManifest = (
     'https://www.youtube-nocookie.com/*',
     'https://m.youtube.com/*',
     'https://youtu.be/*',
+    'https://x.com/*',
     'https://twitter.com/*',
     'https://imgur.com/*',
     'https://www.quora.com/*',
@@ -65,7 +68,6 @@ export const createManifest = (
     'https://www.goodreads.com/*',
     'https://translate.google.com/*',
     'https://www.twitch.tv/*',
-    // 'https://github.com/*',
   ],
   offline_enabled: true,
   incognito: 'spanning',

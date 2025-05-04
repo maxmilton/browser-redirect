@@ -3,8 +3,9 @@
 *.bak
 *.lock
 !bun.lock
-*.log
 *.zip
 /coverage/
 /dist/
 /node_modules/
+/playwright-report/
+/test-results/

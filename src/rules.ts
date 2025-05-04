@@ -99,7 +99,21 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'nitter.net' },
+        transform: { host: 'nitter.privacyredirect.com' },
+      },
+    },
+    condition: {
+      urlFilter: '||x.com',
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 8,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: 'nitter.privacyredirect.com' },
       },
     },
     condition: {
@@ -108,7 +122,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 8,
+    id: 9,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -122,12 +136,12 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 9,
+    id: 10,
     priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'quetre.iket.me' },
+        transform: { host: 'quetre.privacyredirect.com' },
       },
     },
     condition: {
@@ -136,12 +150,12 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 10,
+    id: 11,
     priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'libremdb.iket.me' },
+        transform: { host: 'libremdb.privacyredirect.com' },
       },
     },
     condition: {
@@ -150,7 +164,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 11,
+    id: 12,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -164,7 +178,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 12,
+    id: 13,
     priority: 2,
     action: {
       type: REDIRECT,
@@ -178,7 +192,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 13,
+    id: 14,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -192,7 +206,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 14,
+    id: 15,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -206,12 +220,12 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 15,
+    id: 16,
     priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
-        transform: { host: 'anonymousoverflow.privacyredirect.com/' },
+        transform: { host: 'anonymousoverflow.privacyredirect.com' },
       },
     },
     condition: {
@@ -220,7 +234,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 16,
+    id: 17,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -234,7 +248,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 17,
+    id: 18,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -248,11 +262,12 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 18,
+    id: 19,
     priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
+        // transform: { host: 'lingva.ml' },
         transform: { host: 'translate.privacyredirect.com' },
       },
     },
@@ -262,7 +277,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 19,
+    id: 20,
     priority: 1,
     action: {
       type: REDIRECT,
