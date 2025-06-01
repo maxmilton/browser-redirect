@@ -24,7 +24,7 @@
     "@maxmilton/test-utils": "0.0.10",
     "@playwright/test": "1.52.0",
     "@types/bun": "1.2.11",
-    "@types/chrome": "0.0.318",
+    "@types/chrome": "0.0.326",
     "eslint": "9.26.0",
     "eslint-plugin-unicorn": "59.0.0",
     "typescript": "5.8.3",
