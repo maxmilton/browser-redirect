@@ -41,8 +41,9 @@ describe('dist files', () => {
   test('contains no extra files', async () => {
     expect.assertions(1);
     const files = await readdir('dist');
-    // HACK: Remove _metadata directory, which is created by browsers on extension install.
-    files.splice(files.indexOf('_metadata'), 1);
+    // HACK: Remove _metadata directory created by browsers on extension install.
+    const metadataIndex = files.indexOf('_metadata');
+    if (metadataIndex !== -1) files.splice(metadataIndex, 1);
     expect(files).toHaveLength(distFiles.length);
   });
 });
