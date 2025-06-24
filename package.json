@@ -2,7 +2,7 @@
   "name": "browser-redirect",
   "version": "3.0.0",
   "description": "Automatically redirect top level domains according to predefined rules.",
-  "repository": "maxmilton/browser-redirect",
+  "repository": "github:maxmilton/browser-redirect",
   "homepage": "https://github.com/maxmilton/browser-redirect",
   "author": "Max Milton <max@happyhackers.xyz>",
   "license": "MIT",
@@ -18,16 +18,16 @@
     "test:e2e": "playwright test"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.0.0-beta.6",
-    "@eslint/js": "9.28.0",
-    "@maxmilton/eslint-config": "0.1.0",
-    "@maxmilton/test-utils": "0.0.11",
-    "@playwright/test": "1.52.0",
-    "@types/bun": "1.2.15",
+    "@biomejs/biome": "2.0.5",
+    "@eslint/js": "9.29.0",
+    "@maxmilton/eslint-config": "0.2.1",
+    "@maxmilton/test-utils": "0.0.12",
+    "@playwright/test": "1.53.1",
+    "@types/bun": "1.2.17",
     "@types/chrome": "0.0.326",
-    "eslint": "9.28.0",
+    "eslint": "9.29.0",
     "eslint-plugin-unicorn": "59.0.1",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.33.1"
+    "typescript-eslint": "8.35.0"
   }
 }
