@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
 import dist from '../../dist/manifest.json' with { type: 'json' };
-import { createManifest } from '../../src/manifest';
+import { createManifest } from '../../src/manifest.ts';
 
 const manifest = createManifest(true);
 
