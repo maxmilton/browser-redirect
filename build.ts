@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
-import { createManifest } from './src/manifest';
-import { createRules } from './src/rules';
+import { createManifest } from './src/manifest.ts';
+import { createRules } from './src/rules.ts';
 
 console.time('prebuild');
 await Bun.$`rm -rf dist`;
