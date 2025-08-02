@@ -1,8 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>maxmilton/renovate-config",
-    "github>maxmilton/renovate-config:monthly"
-  ],
+  "extends": ["github>maxmilton/renovate-config", "github>maxmilton/renovate-config:monthly"],
   "automerge": true
 }

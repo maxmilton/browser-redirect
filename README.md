@@ -1,5 +1,5 @@
-[![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/browser-redirect/ci.yml?branch=master)](https://github.com/maxmilton/browser-redirect/actions)
-[![Licence](https://img.shields.io/github/license/maxmilton/browser-redirect.svg)](https://github.com/maxmilton/browser-redirect/blob/master/LICENSE)
+[![CI status](https://badgen.net/github/checks/maxmilton/browser-redirect?label=ci)](https://github.com/maxmilton/browser-redirect/actions)
+[![Licence](https://badgen.net/github/license/maxmilton/browser-redirect)](./LICENSE)
 
 # Browser Redirect ![](./static/icon48.png)
 
@@ -92,4 +92,4 @@ The [right arrow curving left icon](https://github.com/twitter/twemoji/blob/mast
 
 ---
 
-© 2025 [Max Milton](https://maxmilton.com)
+© [Max Milton](https://maxmilton.com)

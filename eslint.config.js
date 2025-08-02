@@ -1,17 +1,17 @@
-import eslint from '@eslint/js';
-import mm from '@maxmilton/eslint-config';
-import unicorn from 'eslint-plugin-unicorn';
-import ts from 'typescript-eslint';
+import js from "@eslint/js";
+import mm from "@maxmilton/eslint-config";
+import unicorn from "eslint-plugin-unicorn";
+import ts from "typescript-eslint";
 
 export default ts.config(
-  eslint.configs.recommended,
-  ...ts.configs.strictTypeChecked,
-  ...ts.configs.stylisticTypeChecked,
+  js.configs.recommended,
+  ts.configs.strictTypeChecked,
+  ts.configs.stylisticTypeChecked,
   unicorn.configs.recommended,
   mm.configs.recommended,
   {
     linterOptions: {
-      reportUnusedDisableDirectives: 'error',
+      reportUnusedDisableDirectives: "error",
     },
     languageOptions: {
       parserOptions: {
@@ -19,6 +19,9 @@ export default ts.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
+    rules: {
+      quotes: ["error", "double", { avoidEscape: true }],
+    },
   },
-  { ignores: ['dist'] },
+  { ignores: ["dist"] },
 );

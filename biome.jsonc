@@ -2,8 +2,8 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "formatter": {
-    "formatWithErrors": true,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "lineWidth": 100
   },
   "linter": {
     "domains": {
@@ -14,23 +14,21 @@
       "style": {
         "noNonNullAssertion": "off"
       },
+      "suspicious": {
+        "noAssignInExpressions": "off",
+        "noConstEnum": "off"
+      },
       "nursery": {
         "noUnresolvedImports": "off" // covered by typescript
       }
     }
   },
   "javascript": {
-    "globals": ["Bun"],
-    "formatter": {
-      "quoteStyle": "single"
-    }
+    "globals": ["Bun"]
   },
   "overrides": [
     {
       "includes": ["**/*.spec.ts", "**/*.test.ts", "test/**"],
-      "formatter": {
-        "lineWidth": 100
-      },
       "linter": {
         "domains": {
           "test": "all"

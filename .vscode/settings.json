@@ -7,7 +7,6 @@
   "git.branchProtection": ["master"],
   "js/ts.implicitProjectConfig.checkJs": true,
   "prettier.enable": false, // use biome instead
-  "stylelint.enable": true,
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsdk": "node_modules/typescript/lib",
   "yaml.validate": true,
