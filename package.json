@@ -4,7 +4,7 @@
   "description": "Automatically redirect top level domains according to predefined rules.",
   "repository": "github:maxmilton/browser-redirect",
   "homepage": "https://github.com/maxmilton/browser-redirect",
-  "author": "Max Milton <max@bunnybunny.org>",
+  "author": "Max Milton <max@2okki.com>",
   "license": "MIT",
   "private": true,
   "type": "module",
