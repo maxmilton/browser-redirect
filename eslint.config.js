@@ -1,12 +1,14 @@
 import js from "@eslint/js";
 import mm from "@maxmilton/eslint-config";
+import { defineConfig } from "eslint/config";
 import unicorn from "eslint-plugin-unicorn";
 import ts from "typescript-eslint";
 
-export default ts.config(
+export default defineConfig(
   js.configs.recommended,
   ts.configs.strictTypeChecked,
   ts.configs.stylisticTypeChecked,
+  // @ts-expect-error - broken upstream types
   unicorn.configs.recommended,
   mm.configs.recommended,
   {
@@ -18,9 +20,6 @@ export default ts.config(
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
-    },
-    rules: {
-      quotes: ["error", "double", { avoidEscape: true }],
     },
   },
   { ignores: ["dist"] },

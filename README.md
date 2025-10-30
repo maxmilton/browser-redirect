@@ -86,7 +86,7 @@ See [releases on GitHub](https://github.com/maxmilton/browser-redirect/releases)
 
 ## License
 
-MIT license. See [LICENSE](https://github.com/maxmilton/browser-redirect/blob/master/LICENSE).
+MIT license. See [LICENSE](./LICENSE).
 
 The [right arrow curving left icon](https://github.com/twitter/twemoji/blob/master/assets/svg/21aa.svg) is from [twitter/twemoji](https://github.com/twitter/twemoji) which is licensed CC-BY 4.0.
 
