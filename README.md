@@ -24,17 +24,20 @@ The following table shows the default redirect rules included in the extension:
 | `x.com`                    | `nitter.privacyredirect.com`            |
 | `twitter.com`              | `nitter.privacyredirect.com`            |
 | `imgur.com`                | `rimgo.privacyredirect.com`             |
+| `i.imgur.com`              | `rimgo.privacyredirect.com`             |
 | `www.quora.com`            | `quetre.privacyredirect.com`            |
-| `imdb.com`                 | `libremdb.privacyredirect.com`          |
+| `www.imdb.com`             | `libremdb.privacyredirect.com`          |
 | `medium.com`               | `scribe.privacyredirect.com`            |
 | `*.medium.com`             | `scribe.privacyredirect.com/@*`         |
 | `wikipedia.org`            | `wikiless.privacyredirect.com`          |
-| `en.wikipedia.org`         | `wikiless.privacyredirect.com`          |
+| `*.wikipedia.org`          | `wikiless.privacyredirect.com`          |
 | `stackoverflow.com`        | `anonymousoverflow.privacyredirect.com` |
 | `www.pinterest.com`        | `binternet.privacyredirect.com`         |
+| `i.pinimg.com`             | `binternet.privacyredirect.com`         |
 | `www.goodreads.com`        | `biblioreads.privacyredirect.com`       |
 | `translate.google.com`     | `translate.privacyredirect.com`         |
 | `www.twitch.tv`            | `safetwitch.privacyredirect.com`        |
+| `player.twitch.tv`         | `safetwitch.privacyredirect.com`        |
 
 ## Usage
 

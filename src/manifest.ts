@@ -16,9 +16,9 @@ export const createManifest = (debug = !process.env.CI): chrome.runtime.Manifest
   description: pkg.description,
   homepage_url: pkg.homepage,
   version: pkg.version,
-  // shippable releases should not have a named version
+  // Shippable releases should not have a named version
   version_name: debug ? gitRef() : undefined,
-  minimum_chrome_version: "84", // for declarative net request
+  minimum_chrome_version: "84", // for declarativeNetRequest
   icons: {
     16: "icon16.png",
     48: "icon48.png",
@@ -49,17 +49,20 @@ export const createManifest = (debug = !process.env.CI): chrome.runtime.Manifest
     "https://x.com/*",
     "https://twitter.com/*",
     "https://imgur.com/*",
+    "https://i.imgur.com/*",
     "https://www.quora.com/*",
-    "https://imdb.com/*",
+    "https://www.imdb.com/*",
     "https://medium.com/*",
     "https://*.medium.com/*",
     "https://wikipedia.org/*",
-    "https://en.wikipedia.org/*",
+    "https://*.wikipedia.org/*",
     "https://stackoverflow.com/*",
     "https://www.pinterest.com/*",
+    "https://i.pinimg.com/*",
     "https://www.goodreads.com/*",
     "https://translate.google.com/*",
     "https://www.twitch.tv/*",
+    "https://player.twitch.tv/*",
   ],
   offline_enabled: true,
   incognito: "spanning",

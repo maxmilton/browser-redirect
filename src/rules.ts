@@ -4,6 +4,7 @@
 const REDIRECT = "redirect" as chrome.declarativeNetRequest.RuleActionType.REDIRECT;
 const MAIN_FRAME = "main_frame" as chrome.declarativeNetRequest.ResourceType.MAIN_FRAME;
 const SUB_FRAME = "sub_frame" as chrome.declarativeNetRequest.ResourceType.SUB_FRAME;
+const IMAGE = "image" as chrome.declarativeNetRequest.ResourceType.IMAGE;
 
 export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
   {
@@ -78,7 +79,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
   },
   {
     id: 6,
-    priority: 2,
+    priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
@@ -138,6 +139,20 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     action: {
       type: REDIRECT,
       redirect: {
+        transform: { host: "rimgo.privacyredirect.com" },
+      },
+    },
+    condition: {
+      urlFilter: "||i.imgur.com",
+      resourceTypes: [MAIN_FRAME, IMAGE],
+    },
+  },
+  {
+    id: 11,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
         transform: { host: "quetre.privacyredirect.com" },
       },
     },
@@ -147,7 +162,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 11,
+    id: 12,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -156,12 +171,12 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
       },
     },
     condition: {
-      urlFilter: "||imdb.com",
+      urlFilter: "||www.imdb.com",
       resourceTypes: [MAIN_FRAME],
     },
   },
   {
-    id: 12,
+    id: 13,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -175,7 +190,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 13,
+    id: 14,
     priority: 2,
     action: {
       type: REDIRECT,
@@ -189,7 +204,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 14,
+    id: 15,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -203,8 +218,8 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 15,
-    priority: 1,
+    id: 16,
+    priority: 2, // higher than rule that matches non-"en" lang subdomain
     action: {
       type: REDIRECT,
       redirect: {
@@ -217,7 +232,21 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 16,
+    id: 17,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        regexSubstitution: String.raw`https://wikiless.privacyredirect.com/\2?lang=\1\3`,
+      },
+    },
+    condition: {
+      regexFilter: String.raw`^https://(\w+)\.wikipedia\.org/([^#]*)(#.*)?$`,
+      resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 18,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -231,7 +260,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 17,
+    id: 19,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -245,7 +274,21 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 18,
+    id: 20,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        regexSubstitution: String.raw`https://binternet.privacyredirect.com/image_proxy.php?url=\0`,
+      },
+    },
+    condition: {
+      regexFilter: String.raw`^https://i\.pinimg\.com/`,
+      resourceTypes: [MAIN_FRAME, IMAGE],
+    },
+  },
+  {
+    id: 21,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -259,12 +302,11 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 19,
+    id: 22,
     priority: 1,
     action: {
       type: REDIRECT,
       redirect: {
-        // transform: { host: 'lingva.ml' },
         transform: { host: "translate.privacyredirect.com" },
       },
     },
@@ -274,7 +316,7 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     },
   },
   {
-    id: 20,
+    id: 23,
     priority: 1,
     action: {
       type: REDIRECT,
@@ -285,6 +327,35 @@ export const createRules = (): chrome.declarativeNetRequest.Rule[] => [
     condition: {
       urlFilter: "||www.twitch.tv",
       resourceTypes: [MAIN_FRAME],
+    },
+  },
+  {
+    id: 24,
+    priority: 2, // higher than fallback
+    action: {
+      type: REDIRECT,
+      redirect: {
+        regexSubstitution: String.raw`https://safetwitch.privacyredirect.com/\1`,
+      },
+    },
+    condition: {
+      regexFilter: String.raw`^https://player\.twitch\.tv/\?(.+?)&.*$`,
+      resourceTypes: [MAIN_FRAME, SUB_FRAME],
+    },
+  },
+  {
+    id: 25,
+    priority: 1,
+    action: {
+      type: REDIRECT,
+      redirect: {
+        transform: { host: "safetwitch.privacyredirect.com" },
+      },
+    },
+    condition: {
+      // Simple fallback when regex match fails
+      urlFilter: "||player.twitch.tv",
+      resourceTypes: [MAIN_FRAME, SUB_FRAME],
     },
   },
 ];
