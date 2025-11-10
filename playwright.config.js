@@ -9,7 +9,7 @@ export default defineConfig({
     acceptDownloads: false,
     contextOptions: { strictSelectors: true },
     locale: "en-US",
-    offline: true, // the extension must work 100% offline
+    offline: true, // no network requests necessary
     timezoneId: "UTC",
     trace: "on-first-retry",
   },

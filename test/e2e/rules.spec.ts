@@ -1,4 +1,3 @@
-// import type { ConsoleMessage } from "@playwright/test";
 import { expect, test } from "./fixtures.ts";
 
 test.describe.configure({

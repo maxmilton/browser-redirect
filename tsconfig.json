@@ -9,7 +9,7 @@
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
-    "allowJs": true, // type=module
+    "allowJs": true,
     "checkJs": true,
     "noEmit": true,
 
