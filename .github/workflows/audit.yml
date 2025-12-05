@@ -5,6 +5,7 @@ on:
     branches:
       - master
     paths:
+      - ".github/workflows/audit.yml"
       - "bun.lock"
       - "package.json"
   pull_request:
