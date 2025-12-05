@@ -1,7 +1,4 @@
-telemetry = false
-
-# [run]
-# bun = true
+"$schema" = "https://www.schemastore.org/bunfig.json"
 
 [install]
 auto = "disable"
