@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     container:
-      image: semgrep/semgrep@sha256:da5057ac7eea5374f4ceeaef09383d816c302e90a909ec7624a328a22b0aa4d7
+      image: semgrep/semgrep@sha256:b6a1bae371d313a8bddf0418b3e094e7cda4f1d77afeeecaa6b08c7f400349ff
     permissions:
       actions: read
       contents: read
