@@ -28,7 +28,7 @@
     "@types/chrome": "0.1.38",
     "eslint": "10.3.0",
     "eslint-plugin-unicorn": "64.0.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "typescript-eslint": "8.57.2"
   }
 }
