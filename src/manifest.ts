@@ -10,14 +10,14 @@ function gitRef() {
     .replace(/^v/, "");
 }
 
-export const createManifest = (debug = !process.env.CI): chrome.runtime.ManifestV3 => ({
+export const createManifest = (isDebug = !process.env.CI): chrome.runtime.ManifestV3 => ({
   manifest_version: 3,
   name: "Browser Redirect",
   description: pkg.description,
   homepage_url: pkg.homepage,
   version: pkg.version,
   // Shippable releases should not have a named version
-  version_name: debug ? gitRef() : undefined,
+  version_name: isDebug ? gitRef() : undefined,
   minimum_chrome_version: "84", // for declarativeNetRequest
   icons: {
     16: "icon16.png",

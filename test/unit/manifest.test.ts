@@ -60,7 +60,6 @@ test("properties are the correct type", () => {
   expect(manifest.icons?.[48]).toBeString();
   expect(manifest.icons?.[128]).toBeString();
   expect(manifest.declarative_net_request).toBePlainObject();
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   expect(manifest.declarative_net_request?.rule_resources).toBeArray();
   expect(manifest.permissions).toBeArray();
   expect(manifest.host_permissions).toBeArray();
