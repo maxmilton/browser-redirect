@@ -11,8 +11,8 @@
   "eslint.enable": true,
   "git.branchProtection": ["master"],
   "prettier.enable": false, // use biome
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
 
   "[css]": {
     "editor.defaultFormatter": "biomejs.biome"
