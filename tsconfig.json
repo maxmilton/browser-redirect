@@ -5,12 +5,12 @@
     "module": "esnext",
     "moduleDetection": "force",
     "moduleResolution": "bundler",
-    "esModuleInterop": false,
     "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": true,
+    "maxNodeModuleJsDepth": 2,
     "noEmit": true,
 
     "strict": true,
@@ -22,7 +22,9 @@
     "noUncheckedSideEffectImports": true,
     "noUnusedLocals": false, // covered by linters
     "noUnusedParameters": false, // covered by linters
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+
+    "types": ["bun", "chrome"]
   },
   "include": ["*.config.js", "build.ts", "src", "test"]
 }
