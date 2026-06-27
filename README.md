@@ -44,7 +44,7 @@ The following table shows the default redirect rules included in the extension:
 Follow these steps to use Browser Redirect:
 
 1. Install the [Bun JavaScript runtime](https://bun.sh), if not already installed.
-1. Clone the project and edit the `rules.ts` file to add custom redirect rules.
+1. Clone the project and edit the `src/rules.ts` file to add custom redirect rules.
 1. Build the project using `bun run build`.
 1. Load the extension into your browser:
    1. Navigate to <chrome://extensions/>.
@@ -63,8 +63,8 @@ If you are satisfied with the default rules, you can download `chrome-extension.
 
 ### Debugging Rules
 
-1. Uncomment `declarativeNetRequestFeedback` permissions in manifest.
-1. Uncomment `background.service_worker` in manifest.
+1. Uncomment debug lines in `src/manifest.ts`.
+1. Uncomment debug lines in `build.ts`.
 1. Rebuild the project and reload the extension in your browser.
 1. Open devtools for the background page and observe the console for feedback.
 
@@ -80,7 +80,7 @@ Report any bugs you encounter on the [GitHub issue tracker](https://github.com/m
 
 We are aware of the following issues:
 
-1. User's cannot dynamically add new rules. This is by design, as the extension uses a static rule set to simplify the implementation. You need to edit `rules.config.ts` and rebuild the project to make changes.
+1. User's cannot dynamically add new rules. This is by design, as the extension uses a static rule set to simplify the implementation. You need to edit `src/rules.ts` and rebuild the project to make changes.
 1. The extension is not installable via the Chrome Web Store. Build the extension with your own custom rules using the steps outlined above.
 
 ## Changelog
