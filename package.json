@@ -21,13 +21,13 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.1",
     "@eslint/js": "10.0.1",
-    "@maxmilton/eslint-config": "0.3.1",
+    "@maxmilton/eslint-config": "0.3.2",
     "@maxmilton/test-utils": "0.0.15",
     "@playwright/test": "1.61.1",
     "@types/bun": "1.3.14",
     "@types/chrome": "0.2.0",
-    "eslint": "10.5.0",
-    "eslint-plugin-unicorn": "68.0.0",
+    "eslint": "10.6.0",
+    "eslint-plugin-unicorn": "69.0.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.62.0"
   }
