@@ -8,9 +8,10 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": false,
   "editor.tabSize": 2,
+  "editor.unicodeHighlight.ambiguousCharacters": true,
+  "editor.unicodeHighlight.invisibleCharacters": true,
   "eslint.enable": true,
   "git.branchProtection": ["master"],
-  "prettier.enable": false, // use biome
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "js/ts.tsdk.promptToUseWorkspaceVersion": true,
 
@@ -22,7 +23,8 @@
   },
   "[javascript]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "never"
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
     },
     "editor.defaultFormatter": "biomejs.biome"
   },
@@ -40,8 +42,12 @@
   },
   "[typescript]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "never"
+      "source.organizeImports": "never",
+      "source.fixAll.eslint": "never"
     },
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[yaml]": {
     "editor.defaultFormatter": "biomejs.biome"
   }
 }
