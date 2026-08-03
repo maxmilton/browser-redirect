@@ -1,15 +1,6 @@
 import { expect, test } from "./fixtures.ts";
 
-test.describe.configure({
-  mode: "parallel",
-  timeout: 1000,
-});
-
-test.beforeEach(async ({ context }, testInfo) => {
-  testInfo.slow(!!process.env.CI);
-  // Mock all requests as 200 OK, we're only checking URL redirects
-  await context.route(/.*/, (route) => route.fulfill());
-});
+test.describe.configure({ mode: "parallel", timeout: 1000 });
 
 test("www.reddit.com", async ({ page }) => {
   await page.goto("https://www.reddit.com/r/test/");
