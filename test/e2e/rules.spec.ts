@@ -5,7 +5,8 @@ test.describe.configure({
   timeout: 1000,
 });
 
-test.beforeEach(async ({ context }) => {
+test.beforeEach(async ({ context }, { slow }) => {
+  slow(!!process.env.CI);
   // Mock all requests as 200 OK, we're only checking URL redirects
   await context.route(/.*/, (route) => route.fulfill());
 });
