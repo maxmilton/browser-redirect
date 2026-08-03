@@ -2,7 +2,8 @@
   "biome.enabled": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
-    "source.fixAll": "explicit"
+    "source.fixAll": "explicit",
+    "source.fixAllDangerous": "never"
   },
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
