@@ -1,10 +1,15 @@
 {
   "recommendations": [
+    "oven.bun-vscode",
+    "oxc.oxc-vscode",
+    "tekumara.typos-vscode",
+    "typescriptteam.native-preview"
+  ],
+  "unwantedRecommendations": [
     "biomejs.biome",
     "dbaeumer.vscode-eslint",
-    "oven.bun-vscode",
-    "tekumara.typos-vscode",
-    "YoavBls.pretty-ts-errors"
-  ],
-  "unwantedRecommendations": ["dprint.dprint", "esbenp.prettier-vscode", "prettier.prettier-vscode"]
+    "dprint.dprint",
+    "esbenp.prettier-vscode",
+    "prettier.prettier-vscode"
+  ]
 }

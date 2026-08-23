@@ -11,8 +11,8 @@
   "scripts": {
     "build": "bun build.ts",
     "lint": "bun lint:fmt && bun lint:js && bun lint:ts",
-    "lint:fmt": "biome check",
-    "lint:js": "eslint",
+    "lint:fmt": "oxfmt --check",
+    "lint:js": "oxlint --format=stylish",
     "lint:ts": "tsc --noEmit",
     "test": "bun test --only-failures",
     "test:ci": "bun test --coverage --randomize --rerun-each=3",
