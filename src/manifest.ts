@@ -7,10 +7,10 @@ function gitRef() {
   return Bun.spawnSync(["git", "describe", "--always", "--dirty=-dev", "--broken"])
     .stdout.toString()
     .trim()
-    .replace(/^v/, "");
+    .replace(/^v/u, "");
 }
 
-export const createManifest = (isDebug = !process.env.CI): chrome.runtime.ManifestV3 => ({
+export const createManifest = (isDebug = !process.env["CI"]): chrome.runtime.ManifestV3 => ({
   manifest_version: 3,
   name: "Browser Redirect",
   description: pkg.description,

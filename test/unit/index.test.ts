@@ -1,11 +1,11 @@
 import { describe, expect, test } from "bun:test";
-import { readdir } from "node:fs/promises";
+import pkg from "../../package.json" with { type: "json" };
 
 describe("dist files", () => {
-  // FIXME: The bun file type is just inferred from the file extension, not the
-  // underlying file data... so that part of this test is not very useful.
+  // TODO: Remove the file MIME type checks? Bun inferrs it from the file
+  // extension, not the actual file data, so the usefulness is questionable.
 
-  // XXX: Files with unknown type (e.g., symlinks) fall back to the default
+  // NOTE: Files of unknown type (e.g., symlinks) fall back to the default
   // "application/octet-stream". Bun.file() does not resolve symlinks so it's
   // safe to infer that all these files are therefore regular files.
   const distFiles: [filename: string, type: string, minBytes?: number, maxBytes?: number][] = [
@@ -17,33 +17,55 @@ describe("dist files", () => {
     // ['sw.js', 'text/javascript;charset=utf-8'], // debugging builds only
   ];
 
-  for (const [filename, type, minBytes, maxBytes] of distFiles) {
-    describe(filename, () => {
-      const file = Bun.file(`dist/${filename}`);
+  describe.each(distFiles)("%s", (filename, type, minBytes, maxBytes) => {
+    const file = Bun.file(`dist/${filename}`);
 
-      test("exists with correct type", () => {
-        expect.assertions(3);
-        expect(file.exists()).resolves.toBeTruthy();
-        expect(file.size).toBeGreaterThan(0);
-        expect(file.type).toBe(type); // TODO: Keep this? Type seems to be resolved from the file extension, not the file data.
-      });
-
-      if (minBytes != null && maxBytes != null) {
-        test("is within expected file size limits", () => {
-          expect.assertions(2);
-          expect(file.size).toBeGreaterThan(minBytes);
-          expect(file.size).toBeLessThan(maxBytes);
-        });
-      }
+    test("exists with correct MIME type", () => {
+      expect.assertions(3);
+      expect(file.exists()).resolves.toBeTrue();
+      expect(file.size).toBeGreaterThan(0);
+      expect(file.type).toBe(type);
     });
-  }
 
-  test("contains no extra files", async () => {
+    if (typeof minBytes === "number" && typeof maxBytes === "number") {
+      test("is within expected file size limits", () => {
+        expect.assertions(2);
+        expect(file.size).toBeGreaterThan(minBytes);
+        expect(file.size).toBeLessThan(maxBytes);
+      });
+    }
+  });
+
+  test("contains no unexpected files", () => {
     expect.assertions(1);
-    const files = await readdir("dist");
-    // HACK: Remove _metadata directory created by browsers on extension install.
-    const metadataIndex = files.indexOf("_metadata");
-    if (metadataIndex !== -1) files.splice(metadataIndex, 1);
-    expect(files).toHaveLength(distFiles.length);
+    const expectedFiles = new Set(distFiles.map(([filename]) => filename));
+    const actualFiles = new Set(new Bun.Glob("**").scanSync({ cwd: "dist" }));
+    expect(actualFiles.difference(expectedFiles)).toBeEmpty();
+  });
+});
+
+describe("package.json", () => {
+  const file = Bun.file("package.json");
+
+  test("exists with correct MIME type", () => {
+    expect.assertions(2);
+    expect(file.exists()).resolves.toBeTrue();
+    expect(file.type).toBe("application/json;charset=utf-8");
+  });
+
+  test("contains valid JSON", async () => {
+    expect.assertions(1);
+    const text = await file.text();
+    expect(JSON.parse(text)).toBePlainObject();
+  });
+
+  test("contains properties used in manifest", () => {
+    expect.assertions(6);
+    expect(pkg).toHaveProperty("description", expect.any(String));
+    expect(pkg).toHaveProperty("version", expect.any(String));
+    expect(pkg).toHaveProperty("homepage", expect.any(String));
+    expect(pkg.description.length).toBeGreaterThan(0);
+    expect(pkg.version.length).toBeGreaterThan(0);
+    expect(pkg.homepage.length).toBeGreaterThan(0);
   });
 });

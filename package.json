@@ -4,9 +4,9 @@
   "private": true,
   "description": "Automatically redirect top level domains according to predefined rules.",
   "homepage": "https://github.com/maxmilton/browser-redirect",
-  "repository": "github:maxmilton/browser-redirect",
   "license": "MIT",
   "author": "Max Milton <max@2okki.com>",
+  "repository": "github:maxmilton/browser-redirect",
   "type": "module",
   "scripts": {
     "build": "bun build.ts",

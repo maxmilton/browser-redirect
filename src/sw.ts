@@ -1,6 +1,8 @@
-// NOTE: Uncomment lines in build.ts and src/manifest.ts for debugging.
+// oxlint-disable no-console
+// oxlint-disable-next-line unicorn/require-module-specifiers
+export {};
 
-/* eslint-disable no-console */
+// NOTE: Uncomment lines in build.ts and src/manifest.ts for debugging.
 
 chrome.action.onClicked.addListener((tab) => {
   chrome.declarativeNetRequest.getMatchedRules({ tabId: tab.id }, (details) => {

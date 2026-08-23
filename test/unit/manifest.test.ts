@@ -11,15 +11,13 @@ test("is an object", () => {
 
 test("is valid JSON", () => {
   expect.assertions(1);
-  // eslint-disable-next-line unicorn/prefer-structured-clone
+  // oxlint-disable-next-line unicorn/prefer-structured-clone
   expect(JSON.parse(JSON.stringify(manifest))).toEqual(manifest);
 });
 
 test("is equal to dist/manifest.json (excluding version_name)", () => {
   expect.assertions(1);
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { version_name: _vn1, ...restSrc } = manifest;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const { version_name: _vn2, ...restDist } = dist as ReturnType<typeof createManifest>;
   expect(restSrc).toEqual(restDist);
 });
@@ -86,7 +84,7 @@ test("does not contain any unexpected properties", () => {
     "incognito",
     // 'key',
   ];
-  // eslint-disable-next-line guard-for-in
+  // oxlint-disable-next-line guard-for-in
   for (const property in manifest) {
     expect(expectedProperties).toContain(property);
   }
@@ -137,28 +135,28 @@ test("does not have version_name when when debug option is false", () => {
 
 // HACK: Mutating env vars that were set before the process started doesn't
 // work in bun, so we skip tests which rely on the CI env var _not_ being set.
-test.skipIf(!!process.env.CI)("has version_name when CI env var is not set", () => {
+test.skipIf(Boolean(process.env["CI"]))("has version_name when CI env var is not set", () => {
   expect.assertions(1);
   const manifest2 = createManifest();
   expect(manifest2.version_name).toBeDefined();
 });
 
-const oldCI = process.env.CI;
+const oldCI = process.env["CI"];
 const restoreCI = () => {
   if (oldCI === undefined) {
     // TODO: Consider setting to undefined instead. Delete does not currently
     // work in bun for env vars that were set before the process started.
     //  ↳ https://github.com/oven-sh/bun/issues/1559#issuecomment-1440507885
     //  ↳ May be fixed, need to investigate; https://github.com/oven-sh/bun/pull/7614
-    delete process.env.CI;
+    delete process.env["CI"];
   } else {
-    process.env.CI = oldCI;
+    process.env["CI"] = oldCI;
   }
 };
 
 test("does not have version_name when env var CI=true", () => {
   expect.assertions(1);
-  process.env.CI = "true";
+  process.env["CI"] = "true";
   const manifest2 = createManifest();
   expect(manifest2.version_name).toBeUndefined();
   restoreCI();

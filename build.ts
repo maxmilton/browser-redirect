@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import { createManifest } from "./src/manifest.ts";
 import { createRules } from "./src/rules.ts";
 

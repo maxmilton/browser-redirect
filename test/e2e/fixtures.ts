@@ -1,7 +1,5 @@
 // https://playwright.dev/docs/chrome-extensions
 
-/* eslint-disable no-empty-pattern */
-
 import path from "node:path";
 import { type BrowserContext, test as base, chromium } from "@playwright/test";
 
@@ -9,7 +7,7 @@ const dist = path.join(import.meta.dirname, "../../dist");
 
 export const test = base.extend<object, { extension: BrowserContext }>({
   extension: [
-    // biome-ignore lint/correctness/noEmptyPattern: playwright setup
+    // oxlint-disable-next-line no-empty-pattern
     async ({}, use) => {
       const context = await chromium.launchPersistentContext("", {
         channel: "chromium",
@@ -22,7 +20,7 @@ export const test = base.extend<object, { extension: BrowserContext }>({
       });
 
       // Mock all requests as 200 OK; we're only checking URL redirects
-      await context.route(/.*/, (route) => route.fulfill());
+      await context.route(/.*/u, (route) => route.fulfill());
 
       await use(context);
       await context.close();

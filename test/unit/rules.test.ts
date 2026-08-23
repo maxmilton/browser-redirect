@@ -15,7 +15,7 @@ test("is an array of objects", () => {
 
 test("is valid JSON", () => {
   expect.assertions(1);
-  // eslint-disable-next-line unicorn/prefer-structured-clone
+  // oxlint-disable-next-line unicorn/prefer-structured-clone
   expect(JSON.parse(JSON.stringify(rules))).toEqual(rules);
 });
 
