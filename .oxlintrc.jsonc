@@ -2,7 +2,7 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": ["./node_modules/@maxmilton/oxlint-config/recommended.json"],
   "options": {
-    "maxWarnings": 100,
+    "maxWarnings": 30,
     "reportUnusedDisableDirectives": "error",
     "respectEslintDisableDirectives": false,
     "typeAware": true,
@@ -19,28 +19,21 @@
   // https://github.com/oxc-project/javascript-globals/blob/main/src/lib.rs
   "env": {
     "builtin": true,
+    "es2026": true, // TODO: es2027 once in oxc.
+    "bun": true,
+    "commonjs": false,
     "browser": true,
     "webextensions": true,
-    "es2025": true,
-    "es2026": true,
-  },
-  "globals": {
-    "Bun": "readonly",
-    "process": "readonly",
   },
   "rules": {
-    // "eslint/no-plusplus": "off", // byte savings
-    // "eslint/prefer-named-capture-group": "off",
-    // "typescript/no-unsafe-type-assertion": "off", // TODO: re-enable when we can fix all the issues
-    // "typescript/promise-function-async": "off",
-    // "unicorn/prefer-at": "off", // bad browser support
-    //
+    "node/no-sync": "off",
+    "typescript/strict-boolean-expressions": "off", // too pedantic
+
+    // TODO: Remove when we can fix all the issues
+    "typescript/no-unsafe-type-assertion": "off",
+
     // // TODO: These are buggy. Remove after future oxlint updates.
     // "typescript/prefer-readonly-parameter-types": "off",
-
-    "node/no-sync": "off",
-    "typescript/no-unsafe-type-assertion": "warn",
-    "typescript/strict-boolean-expressions": "off", // too pedantic
   },
   "overrides": [
     {
