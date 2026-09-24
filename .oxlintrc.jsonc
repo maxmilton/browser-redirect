@@ -2,14 +2,14 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "extends": ["./node_modules/@maxmilton/oxlint-config/recommended.json"],
   "options": {
-    "maxWarnings": 30,
+    "maxWarnings": 20,
     "reportUnusedDisableDirectives": "error",
     "respectEslintDisableDirectives": false,
     "typeAware": true,
   },
   "categories": {
     "correctness": "error",
-    "suspicious": "error",
+    "suspicious": "warn",
     "pedantic": "warn",
     "perf": "error",
     "style": "warn",
@@ -28,12 +28,6 @@
   "rules": {
     "node/no-sync": "off",
     "typescript/strict-boolean-expressions": "off", // too pedantic
-
-    // TODO: Remove when we can fix all the issues
-    "typescript/no-unsafe-type-assertion": "off",
-
-    // // TODO: These are buggy. Remove after future oxlint updates.
-    // "typescript/prefer-readonly-parameter-types": "off",
   },
   "overrides": [
     {
@@ -53,6 +47,8 @@
     {
       "files": ["test/**/*.test.ts", "test/**/*.spec.ts"],
       "rules": {
+        "typescript/no-unsafe-type-assertion": "off",
+        "typescript/prefer-readonly-parameter-types": "off",
         "unicorn/consistent-function-scoping": "off", // tests may define scoped helpers
       },
     },
