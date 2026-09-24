@@ -1,7 +1,7 @@
 // https://playwright.dev/docs/chrome-extensions
 
 import path from "node:path";
-import { type BrowserContext, test as base, chromium } from "@playwright/test";
+import { test as base, type BrowserContext, chromium } from "@playwright/test";
 
 const dist = path.join(import.meta.dirname, "../../dist");
 
