@@ -1,9 +1,11 @@
 {
   "recommendations": [
+    "bierner.comment-tagged-templates",
     "oven.bun-vscode",
     "oxc.oxc-vscode",
     "tekumara.typos-vscode",
-    "typescriptteam.native-preview"
+    "typescriptteam.native-preview",
+    "zizmor.zizmor-vscode"
   ],
   "unwantedRecommendations": [
     "biomejs.biome",
