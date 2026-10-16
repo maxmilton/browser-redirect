@@ -39,7 +39,9 @@ describe("dist files", () => {
   test("contains no unexpected files", () => {
     expect.assertions(1);
     const expectedFiles = new Set(distFiles.map(([filename]) => filename));
-    const actualFiles = new Set(new Bun.Glob("**").scanSync({ cwd: "dist" }));
+    const actualFiles = new Set(
+      new Bun.Glob("**").scanSync({ cwd: "dist", dot: true, onlyFiles: false }),
+    );
     expect(actualFiles.difference(expectedFiles)).toBeEmpty();
   });
 });
