@@ -1,7 +1,7 @@
 [![CI status](https://badgen.net/github/checks/maxmilton/browser-redirect?label=ci)](https://github.com/maxmilton/browser-redirect/actions)
-[![Licence](https://badgen.net/github/license/maxmilton/browser-redirect)](./LICENSE)
+[![Licence](https://badgen.net/github/license/maxmilton/browser-redirect)](LICENSE)
 
-# Browser Redirect ![](./static/icon48.png)
+# Browser Redirect ![](static/icon48.png)
 
 Browser Redirect is a browser extension that redirects top level domains according to predefined rules. It uses the [`declarativeNetRequest` API](https://developer.chrome.com/docs/extensions/reference/declarativeNetRequest/), which provides a faster and more secure way to handle redirects than other [alternatives](https://github.com/libredirect/browser_extension), as it cannot read the content of web pages.
 
@@ -89,10 +89,6 @@ See [releases on GitHub](https://github.com/maxmilton/browser-redirect/releases)
 
 ## License
 
-MIT license. See [LICENSE](./LICENSE).
+[MIT License](LICENSE) · © [Max Milton](https://maxmilton.com)
 
 The [right arrow curving left icon](https://github.com/twitter/twemoji/blob/master/assets/svg/21aa.svg) is from [twitter/twemoji](https://github.com/twitter/twemoji) which is licensed CC-BY 4.0.
-
----
-
-© [Max Milton](https://maxmilton.com)
